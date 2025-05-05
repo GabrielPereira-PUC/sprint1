@@ -39,15 +39,6 @@ main {
     flex-wrap: wrap;
 }
 
-.card {
-    background-color: var(--cor-logo);
-    border: 1px solid var(--cor-secundaria);
-    padding: 20px;
-    border-radius: 6px;
-    position: relative;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-}
 
 .imagem-produto {
     width: 100%;
@@ -61,23 +52,29 @@ main {
     margin-bottom: 10px;
 }
 
-.imagem-produto::after {
-    content: "Produto";
-}
-
-.campo {
-    background-color: white;
-    color: var(--cor-texto);
-    padding: 5px 10px;
-    margin: 5px 0;
-    border-radius: 4px;
-    text-align: center;
-    font-size: var(--tamanho-paragrafo);
-}
 
 .icone-lixeira {
     margin-top: 10px;
     text-align: center;
     font-size: 32px;
     cursor: pointer;
+}
+
+.caixa-texto {
+    max-width: 300px;
+    margin: 0 auto 10px auto;
+    border: 1px solid #ccc;
+    padding: 8px;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+.card-img-top {
+    width: 50%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    max-height: 150px;
+    object-fit: contain;
 }

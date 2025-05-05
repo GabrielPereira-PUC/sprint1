@@ -124,10 +124,9 @@ function mostrarAlimentosVencendo() {
           : `<p class="card-text text-warning font-weight-bold">⚠️ Vencendo em breve</p>`;
 
         const card = document.createElement('div');
-        card.className = 'card';
+        card.className = 'col-sm-6 col-md-4';
 
         card.innerHTML = `
-        <div class="card mb-4 shadow-sm">
                   <img src="imagens/${alimento.imagem}" class="card-img-top" style="" alt="${alimento.nome}">
                   <div class="caixa-texto">
                       <div class="info-box">

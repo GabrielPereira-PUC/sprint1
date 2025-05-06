@@ -127,8 +127,8 @@ function mostrarAlimentosVencendo() {
         card.className = 'col-sm-6 col-md-4';
 
         card.innerHTML = `
-                  <img src="imagens/${alimento.imagem}" class="card-img-top" style="" alt="${alimento.nome}">
-                  <div class="caixa-texto">
+                  <img src="imagens/${alimento.imagem}" class="card-img-top" alt="${alimento.nome}">
+                  <div class="texto-geral">
                       <div class="info-box">
                           <h5 class="card-title">${alimento.nome}</h5>
                       </div>

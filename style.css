@@ -1,8 +1,8 @@
 :root {
-    --cor-primaria: lightgray;
-    --cor-secundaria: gray;
+    --cor-primaria: #059669;
+    --cor-secundaria: #10b981;
     --cor-caixas: white;
-    --cor-texto: black;
+    --cor-texto: #333;
     --cor-logo: white;
     --fonte-principal: 'Roboto', sans-serif;
     --tamanho-fonte: 30px;

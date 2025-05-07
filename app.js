@@ -1,87 +1,190 @@
 const dados = {
-  alimentos: [
+    "alimentos": [
     {
-      id: 1,
-      nome: "banana",
-      tipo: "prata",
-      imagem: "banana-prata.png",
-      categoria: 1
+      "id": 1,
+      "nome": "banana",
+      "tipo": "prata",
+      "imagem": "banana-prata.png",
+      "categoria": 1
     },
     {
-      id: 2,
-      nome: "batata",
-      tipo: "inglesa",
-      imagem: "batata-inglesa.png",
-      categoria: 2
+      "id": 2,
+      "nome": "batata",
+      "tipo": "inglesa",
+      "imagem": "batata-inglesa.png",
+      "categoria": 2
     },
     {
-      id: 3,
-      nome: "alface",
-      tipo: "americana",
-      imagem: "alface-americana.png",
-      categoria: 3
+      "id": 3,
+      "nome": "alface",
+      "tipo": "americana",
+      "imagem": "alface-americana.png",
+      "categoria": 3
     }
   ],
-  ambientes: [
+  "ambientes": [
     {
-      id: 1,
-      nome: "Geladeira",
-      tipo: 1,
-      imagem: "geladeira.png",
-      itens: [
+      "id": 1,
+      "nome": "Geladeira",
+      "tipo": 1,
+      "imagem": "geladeira.png",
+      "itens": [
         {
-          alimentoId: 1,
-          quantidade: 5,
-          vencimento: "2025-02-12",
-          cadastro: "2025-02-05"
+          "alimentoId": 1,
+          "quantidade": 5,
+          "vencimento": "2025-02-12",
+          "cadastro": "2025-02-05"
         },
         {
-          alimentoId: 3,
-          quantidade: 2,
-          vencimento: "2025-02-15",
-          cadastro: "2025-02-10"
+          "alimentoId": 3,
+          "quantidade": 2,
+          "vencimento": "2025-02-15",
+          "cadastro": "2025-02-10"
         }
       ]
     },
     {
-      id: 2,
-      nome: "Despensa",
-      tipo: 2,
-      imagem: "despensa.png",
-      itens: [
+      "id": 2,
+      "nome": "Despensa",
+      "tipo": 2,
+      "imagem": "despensa.png",
+      "itens": [
         {
-          alimentoId: 2,
-          quantidade: 10,
-          vencimento: "2025-03-10",
-          cadastro: "2025-02-01"
+          "alimentoId": 2,
+          "quantidade": 10,
+          "vencimento": "2025-03-10",
+          "cadastro": "2025-02-01"
         }
       ]
     },
     {
-      id: 3,
-      nome: "Freezer",
-      tipo: 1,
-      imagem: "freezer.png",
-      itens: [
+      "id": 3,
+      "nome": "Freezer",
+      "tipo": 1,
+      "imagem": "freezer.png",
+      "itens": [
         {
-          alimentoId: 2,
-          quantidade: 4,
-          vencimento: "2025-06-01",
-          cadastro: "2025-01-15"
+          "alimentoId": 2,
+          "quantidade": 4,
+          "vencimento": "2025-06-01",
+          "cadastro": "2025-01-15"
         }
       ]
     }
-  ]
+  ],
+  "listasDeCompra": [
+    {
+      "id": 1,
+      "nome": "Lista Casa",
+      "itens": [
+        {
+          "alimentoId": 1,
+          "quantidade": 5
+        },
+        {
+          "alimentoId": 2,
+          "quantidade": 2
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "nome": "Lista Restaurante",
+      "itens": [
+        {
+          "alimentoId": 3,
+          "quantidade": 4
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "nome": "Lista Churrasco",
+      "itens": [
+        {
+          "alimentoId": 1,
+          "quantidade": 1
+        },
+        {
+          "alimentoId": 3,
+          "quantidade": 2
+        }
+      ]
+    }
+  ],
+  "categoriaAlimento": [
+    {
+      "id": 0,
+      "categoria": "Outros"
+    },
+    {
+      "id": 1,
+      "categoria": "Fruta"
+    },
+    {
+      "id": 2,
+      "categoria": "Legume"
+    },
+    {
+      "id": 3,
+      "categoria": "Vegetal"
+    },
+    {
+      "id": 4,
+      "categoria": "Carne Bovina"
+    },
+    {
+      "id": 5,
+      "categoria": "Carne Suína"
+    },
+    {
+      "id": 6,
+      "categoria": "Aves"
+    },
+    {
+      "id": 7,
+      "categoria": "Peixes e Frutos do Mar"
+    },
+    {
+      "id": 8,
+      "categoria": "Soja e Derivados"
+    },
+    {
+      "id": 9,
+      "categoria": "Laticínio"
+    },
+    {
+      "id": 10,
+      "categoria": "Grãos e Cereais"
+    }
+  ],
+  "tipoAmbiente": [
+    {
+      "id": 0,
+      "tipo": "Outros"
+    },
+    {
+      "id": 1,
+      "tipo": "Refrigeração"
+    },
+    {
+      "id": 2,
+      "tipo": "Seco"
+    },
+    {
+      "id": 3,
+      "tipo": "Congelado"
+    }
+  ],
 };
 
 function verificarStatusVencimento(dataVencimentoStr) {
   const hoje = new Date();
   hoje.setHours(0, 0, 0, 0);
 
-  // Criar a data vencimento no horário local para evitar erro de fuso
   const partes = dataVencimentoStr.split('-');
   const ano = parseInt(partes[0], 10);
-  const mes = parseInt(partes[1], 10) - 1; // mês no JS começa do zero
+  const mes = parseInt(partes[1], 10) - 1;
   const dia = parseInt(partes[2], 10);
   const vencimento = new Date(ano, mes, dia);
   vencimento.setHours(0, 0, 0, 0);
@@ -95,7 +198,7 @@ function verificarStatusVencimento(dataVencimentoStr) {
 }
 
 function formatarData(dataStr) {
-  // Criar a data no horário local para evitar problema de fuso horário
+
   const partes = dataStr.split('-');
   const ano = parseInt(partes[0], 10);
   const mes = parseInt(partes[1], 10) - 1;
@@ -112,10 +215,14 @@ function mostrarAlimentosVencendo() {
   const container = document.getElementById('cartoes-container');
   container.innerHTML = '';
 
+  let algumVencendo = false;
+
   dados.ambientes.forEach(ambiente => {
     ambiente.itens.forEach(item => {
       const status = verificarStatusVencimento(item.vencimento);
       if (status === "vencido" || status === "quase") {
+        algumVencendo = true;
+
         const alimento = dados.alimentos.find(a => a.id === item.alimentoId);
         if (!alimento) return;
 
@@ -153,6 +260,10 @@ function mostrarAlimentosVencendo() {
       }
     });
   });
+
+  if (!algumVencendo) {
+    container.innerHTML = `<h4 style="color:green"> Nenhum alimento está vencido ou prestes a vencer!</h4>`;
+  }
 }
 
 document.addEventListener('DOMContentLoaded', mostrarAlimentosVencendo);
